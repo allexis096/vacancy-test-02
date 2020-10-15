@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Form as Unform } from '@unform/web';
 
 import backgroundLogin from '../../assets/background-login.jpeg';
 
@@ -12,6 +11,10 @@ export const Background = styled.div`
   width: 50vw;
   background: url(${backgroundLogin}) no-repeat center;
   background-size: cover;
+
+  @media (max-width: 780px) {
+    display: none;
+  }
 `;
 
 export const LoginContainer = styled.div`
@@ -26,7 +29,7 @@ export const LoginContainer = styled.div`
     margin-bottom: 20px;
   }
 
-  > h1 {
+  h1 {
     font-size: 28px;
     font-weight: 400;
     width: 380px;
@@ -34,17 +37,39 @@ export const LoginContainer = styled.div`
     margin-bottom: 12px;
   }
 
-  span {
+  > p {
     color: #858882;
     max-width: 350px;
     font-size: 14px;
     margin-bottom: 40px;
   }
+
+  a {
+    margin-top: 35px;
+    font-weight: 700;
+    font-size: 13px;
+    color: #45b54a;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #4dd153;
+    }
+  }
+
+  @media (max-width: 780px) {
+    width: 100vw;
+  }
 `;
 
-export const Form = styled(Unform)`
-  /* display: flex;
-  flex-direction: column;
+export const Footer = styled.footer`
+  display: flex;
   align-items: center;
-  width: 100%; */
+  justify-content: center;
+  margin-top: 60px;
+  padding: 20px 0;
+  border-top: 1.1px solid rgb(229, 235, 231);
+
+  p {
+    font-size: 13px;
+  }
 `;
