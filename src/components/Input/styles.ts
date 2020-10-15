@@ -1,6 +1,10 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
+interface InputProps {
+  hasError: boolean;
+}
+
+export const Container = styled.div<InputProps>`
   position: relative;
 
   input {
@@ -12,6 +16,12 @@ export const Container = styled.div`
 
     border: 1px solid #858882;
     border-radius: 10px;
+
+    ${props =>
+      props.hasError &&
+      css`
+        border: 1px solid #ff3a3a;
+      `}
   }
 
   label {
@@ -22,5 +32,13 @@ export const Container = styled.div`
 
     top: 5px;
     left: 16px;
+  }
+
+  span {
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    font-size: 11px;
+    color: #ff3a3a;
   }
 `;
