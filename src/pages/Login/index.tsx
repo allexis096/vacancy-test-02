@@ -3,6 +3,7 @@ import * as Yup from 'yup';
 import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
 
+import { useHistory } from 'react-router-dom';
 import logoImg from '../../assets/logo.png';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
@@ -14,30 +15,36 @@ interface ErrorsYup {
 }
 
 const Login: React.FC = () => {
+  const history = useHistory();
   const formRef = useRef<FormHandles>(null);
 
-  const handleSubmit = useCallback(async data => {
-    try {
-      const schema = Yup.object().shape({
-        email: Yup.string().email().required(),
-        password: Yup.string().max(6).required(),
-      });
-
-      await schema.validate(data, {
-        abortEarly: false,
-      });
-    } catch (err) {
-      if (err instanceof Yup.ValidationError) {
-        const errors: ErrorsYup = {};
-
-        err.inner.forEach(error => {
-          errors[error.path] = 'É obrigatório';
+  const handleSubmit = useCallback(
+    async data => {
+      try {
+        const schema = Yup.object().shape({
+          email: Yup.string().email().required(),
+          password: Yup.string().max(6).required(),
         });
 
-        formRef.current?.setErrors(errors);
+        await schema.validate(data, {
+          abortEarly: false,
+        });
+
+        history.push('/dashboard');
+      } catch (err) {
+        if (err instanceof Yup.ValidationError) {
+          const errors: ErrorsYup = {};
+
+          err.inner.forEach(error => {
+            errors[error.path] = 'É obrigatório';
+          });
+
+          formRef.current?.setErrors(errors);
+        }
       }
-    }
-  }, []);
+    },
+    [history],
+  );
 
   return (
     <Container>
