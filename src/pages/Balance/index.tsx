@@ -25,6 +25,12 @@ const Balance: React.FC = () => {
   useEffect(() => {
     setBalance(true);
     history.push('/balance');
+
+    const companyName = localStorage.getItem('@Contasimples:company');
+
+    if (!companyName) {
+      history.push('/');
+    }
   }, [balance, setBalance, history]);
 
   return (

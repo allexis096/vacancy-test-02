@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import * as Yup from 'yup';
 import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
@@ -17,6 +17,14 @@ interface ErrorsYup {
 const Login: React.FC = () => {
   const history = useHistory();
   const formRef = useRef<FormHandles>(null);
+
+  useEffect(() => {
+    const companyName = localStorage.getItem('@Contasimples:company');
+
+    if (companyName) {
+      history.push('/dashboard');
+    }
+  }, [history]);
 
   const handleSubmit = useCallback(
     async data => {

@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import navContext from '../../context/navContext';
 import LeftBar from '../../components/LeftBar';
-import api from '../../services/api';
+// import api from '../../services/api';
 
 import { Container, DashboardStart, Company } from './styles';
 
@@ -25,6 +25,12 @@ const Dashboard: React.FC = () => {
   useEffect(() => {
     setHome(true);
     history.push('/dashboard');
+
+    const companyName = localStorage.getItem('@Contasimples:company');
+
+    if (!companyName) {
+      history.push('/');
+    }
   }, [home, setHome, history]);
 
   return (
