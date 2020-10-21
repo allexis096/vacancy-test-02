@@ -22,6 +22,7 @@ const Login: React.FC = () => {
     async data => {
       try {
         const schema = Yup.object().shape({
+          name: Yup.string().required(),
           email: Yup.string().email().required(),
           password: Yup.string().max(6).required(),
         });
@@ -29,6 +30,11 @@ const Login: React.FC = () => {
         await schema.validate(data, {
           abortEarly: false,
         });
+
+        localStorage.setItem(
+          '@Contasimples:company',
+          JSON.stringify(data.name),
+        );
 
         history.push('/dashboard');
       } catch (err) {
@@ -60,6 +66,7 @@ const Login: React.FC = () => {
         <p>Preencha os campos abaixo para acessar sua conta</p>
 
         <Form ref={formRef} onSubmit={handleSubmit}>
+          <Input name="name" textLabel="Nome da Empresa" />
           <Input name="email" textLabel="Endereço de e-mail" />
           <Input name="password" type="password" textLabel="Senha" />
 

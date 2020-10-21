@@ -45,7 +45,7 @@ export const LoginContainer = styled.div`
   }
 
   a {
-    margin-top: 35px;
+    margin-top: 15px;
     font-weight: 700;
     font-size: 13px;
     color: #45b54a;
@@ -65,7 +65,6 @@ export const Footer = styled.footer`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 60px;
   padding: 20px 0;
   border-top: 1.1px solid rgb(229, 235, 231);
 
