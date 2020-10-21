@@ -16,6 +16,7 @@ import {
   NavBar,
   NavAction,
 } from './styles';
+import formatValue from '../../utils/formatValue';
 
 const LeftBar: React.FC = () => {
   const history = useHistory();
@@ -27,6 +28,7 @@ const LeftBar: React.FC = () => {
     setHome,
     setBalance,
     setExtract,
+    balanceTotal,
   } = useContext(navContext);
 
   const handleHome = useCallback(() => {
@@ -64,7 +66,7 @@ const LeftBar: React.FC = () => {
         <HeaderBalance>
           <div>
             <p>Saldo da conta</p>
-            <strong>R$15.150,00</strong>
+            <strong>{formatValue(Number(balanceTotal))}</strong>
           </div>
           <MdVisibility color="#999e9b" size={24} />
         </HeaderBalance>
