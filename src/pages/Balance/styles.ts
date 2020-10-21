@@ -28,7 +28,7 @@ export const DashboardBalance = styled.section`
     text-align: center;
     font-size: 45px;
 
-    background-color: #E5EBE7;
+    background-color: #e5ebe7;
 
     border: 1px solid #fff;
     border-radius: 5px;
@@ -39,4 +39,5 @@ export const DashboardBalance = styled.section`
       box-shadow: 5px 3px 3px 1px rgba(0, 0, 0, 0.67);
       cursor: default;
     }
+  }
 `;
