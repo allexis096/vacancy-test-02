@@ -41,19 +41,17 @@ const Extract: React.FC = () => {
             </thead>
 
             <tbody>
-              {transactions.map(transaction => {
-                return (
-                  <tr key={transaction.formattedValue}>
-                    <td>{transaction.tipoTransacao}</td>
-                    <td className={transaction.formattedCredit}>
-                      {transaction.credito === true ? '+' : '-'}{' '}
-                      {transaction.formattedValue}
-                    </td>
-                    <td>{transaction.descricaoTransacao}</td>
-                    <td>{transaction.formattedDate}</td>
-                  </tr>
-                );
-              })}
+              {transactions.map(transaction => (
+                <tr key={transaction.id}>
+                  <td>{transaction.tipoTransacao}</td>
+                  <td className={transaction.formattedCredit}>
+                    {transaction.credito === true ? '+' : '-'}{' '}
+                    {transaction.formattedValue}
+                  </td>
+                  <td>{transaction.descricaoTransacao}</td>
+                  <td>{transaction.formattedDate}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </MainTable>
