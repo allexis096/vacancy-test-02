@@ -28,7 +28,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server-transactions": "json-server --watch mocks_transacoes.json --port 5000"
+    "server-transactions": "json-server --watch mocks_transacoes.json --port 5000",
+    "server-companies": "json-server --watch mocks_empresas.json --port 5001"
   },
   "browserslist": {
     "production": [
