@@ -32,7 +32,7 @@ const Login: React.FC = () => {
         const schema = Yup.object().shape({
           name: Yup.string().required(),
           email: Yup.string().email().required(),
-          password: Yup.string().max(6).required(),
+          password: Yup.string().required(),
         });
 
         await schema.validate(data, {
