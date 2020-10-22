@@ -85,7 +85,7 @@ const LeftBar: React.FC = () => {
 
         <NavAction onClick={handleCard} card={card}>
           <BiMoney color="#999e9b" size={24} />
-          <span>Saldo</span>
+          <span>Cartão</span>
         </NavAction>
 
         <NavAction onClick={handleExtract} extract={extract}>
