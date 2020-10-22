@@ -1,44 +1,105 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center"><img  alt="Contasimples" src="https://imgur.com/yblEidm.png" /></p>
 
-## Available Scripts
+<p align="center">
 
-In the project directory, you can run:
+<img alt="GitHub language count" src="https://img.shields.io/github/languages/count/allexis096/vacancy-test-02">
 
-### `yarn start`
+<img alt="Repository size" src="https://img.shields.io/github/repo-size/allexis096/vacancy-test-02">
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<a href="https://github.com/allexis096/nlvacancy-test-02/graphs/commit-activity">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/allexis096/vacancy-test-02?color=blue%22">
+</a>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+<img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen?color=blue">
+</p>
 
-### `yarn test`
+<p align="center">
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<a href="https://reactjs.org/">
+  <img alt="ReactJS" src="https://img.shields.io/static/v1?color=blue&label=React&message=JS&?style=plastic&logo=React">
+</a>
 
-### `yarn build`
+<a href="https://www.typescriptlang.org/">
+  <img alt="Typescript" src="https://img.shields.io/static/v1?color=blue&label=Typescript&message=JS&?style=plastic&logo=Typescript">
+</a>
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+</p>
+<h2 align="center">
+  Internet Banking
+</h2>
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+<p align="center">Realization of a internet banking (in proccess)</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🏁 About the app
 
-### `yarn eject`
+In this page you need to login, and when you insert the company name, this company will be saved on local storage to use in practically all pages.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The companies I prefer to generate randomly, to use 100% of the mocks in json api. (if need, I know too to use only one company).
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Using Context API, I connect all aplication to use the same information.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The Extract Account (Buttons to list Debit/Credit) and Card page I lost to the time, but if I had more time, for sure I would make that part. (I'm sorry.)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+I change a little the api just for use the json-server.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🔨 Techs:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [ReactJS][reactjs]
+- [TypeScript][typescript]
+- [Styled Components][styledcomponents]
+- [JSON Server][jsonserver]
+- [Axios][axios]
+
+
+
+## 🚀 How to run this project
+
+To clone and execute the app, you'll need [Git](https://git-scm.com) and [NodeJs][nodejs] installed in your PC.
+
+### 🌀 Cloning the repository
+
+```bash
+# Clone this repo
+$ git clone https://github.com/allexis096/vacancy-test-02.git
+
+# Access the folder via terminal
+$ cd vacancy-test-02
+
+# Install the dependencies
+$ yarn
+```
+
+### 🧭 Running the fake api
+
+```bash
+# Run
+$ yarn server-transactions
+
+# The server will be inicializing on port:5000 (http://localhost:5000)
+
+# Run
+$ yarn server-companies
+
+# The server will be inicializing on port:5001 (http://localhost:5001)
+```
+
+### 🧭 Running the app
+
+```bash
+# Execute a Aplicação
+$ yarn start
+
+# The server will be inicializing on port:3000 - acesse http://localhost:3000
+```
+
+Made with ❤️ by Allexis Figueiredo 👋🏽 [Contact me!](https://www.linkedin.com/in/allexis-figueiredo/)
+
+[nodejs]: https://nodejs.org/en/
+[license]: https://opensource.org/licenses/MIT
+[reactjs]: https://reactjs.org/
+[axios]: https://www.npmjs.com/package/axios
+[license]: https://opensource.org/licenses/MIT
+[typescript]: https://www.typescriptlang.org/
+[styledcomponents]: https://styled-components.com/
+[jsonserver]: https://github.com/typicode/json-server
