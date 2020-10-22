@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import navContext from '../../context/navContext';
@@ -8,16 +8,6 @@ import LeftBar from '../../components/LeftBar';
 import { Container, DashboardCard } from './styles';
 
 const Card: React.FC = () => {
-  const [company] = useState(() => {
-    const companyName = localStorage.getItem('@Contasimples:company');
-
-    if (companyName) {
-      return JSON.parse(companyName);
-    }
-
-    return '';
-  });
-
   const history = useHistory();
 
   const { card, setCard } = useContext(navContext);
