@@ -10,13 +10,13 @@ import formatValue from '../utils/formatValue';
 
 interface NavContextProps {
   home: boolean;
-  balance: boolean;
+  card: boolean;
   extract: boolean;
   transactions: ResponseTransactions[];
   balanceTotal: number | undefined;
 
   setHome: Dispatch<SetStateAction<boolean>>;
-  setBalance: Dispatch<SetStateAction<boolean>>;
+  setCard: Dispatch<SetStateAction<boolean>>;
   setExtract: Dispatch<SetStateAction<boolean>>;
   setTransactions: Dispatch<SetStateAction<ResponseTransactions[]>>;
   setBalanceTotal: Dispatch<SetStateAction<number | undefined>>;
@@ -34,13 +34,14 @@ interface ResponseTransactions {
   formattedCredit: string;
   formattedValue: string;
   formattedDate: Date;
+  formattedCompanyId: number;
 }
 
 const navContext = createContext<NavContextProps>({} as NavContextProps);
 
 export const NavContextProvider: React.FC = ({ children }) => {
   const [home, setHome] = useState(false);
-  const [balance, setBalance] = useState(false);
+  const [card, setCard] = useState(false);
   const [extract, setExtract] = useState(false);
 
   const [transactions, setTransactions] = useState<ResponseTransactions[]>([]);
@@ -72,6 +73,7 @@ export const NavContextProvider: React.FC = ({ children }) => {
           formattedDate: new Date(transaction.dataTransacao).toLocaleDateString(
             'pt-br',
           ),
+          formattedCompanyId: transaction.empresaId,
         }),
       );
 
@@ -106,8 +108,8 @@ export const NavContextProvider: React.FC = ({ children }) => {
         home,
         setHome,
 
-        balance,
-        setBalance,
+        card,
+        setCard,
 
         extract,
         setExtract,

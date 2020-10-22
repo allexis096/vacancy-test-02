@@ -3,14 +3,14 @@ import { Switch, Route } from 'react-router-dom';
 
 import Login from '../pages/Login';
 import Dashboard from '../pages/Dashboard';
-import Balance from '../pages/Balance';
+import Card from '../pages/Card';
 import Extract from '../pages/Extract';
 
 const Routes: React.FC = () => (
   <Switch>
     <Route path="/" exact component={Login} />
     <Route path="/dashboard" component={Dashboard} />
-    <Route path="/balance" component={Balance} />
+    <Route path="/card" component={Card} />
     <Route path="/extract" component={Extract} />
   </Switch>
 );

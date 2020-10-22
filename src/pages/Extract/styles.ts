@@ -21,6 +21,27 @@ export const DashboardExtract = styled.section`
   flex: 1;
 `;
 
+export const Buttons = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 20px;
+
+  button {
+    box-shadow: 2px 1px 3px 1px rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 5px;
+    margin-right: 10px;
+    background-color: #e7ede9;
+
+    transition: background-color 0.3s;
+    &:hover {
+      background-color: #fff;
+    }
+  }
+`;
+
 export const MainTable = styled.main`
   color: #000;
   background-color: #e5ebe7;

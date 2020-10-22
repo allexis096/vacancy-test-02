@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 interface NavActionProps {
   home?: boolean;
-  balance?: boolean;
+  card?: boolean;
   extract?: boolean;
 }
 
@@ -81,7 +81,7 @@ export const NavAction = styled.a<NavActionProps>`
     `}
 
   ${props =>
-    props.balance &&
+    props.card &&
     css`
       box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
       background-color: #fff;

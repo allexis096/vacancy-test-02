@@ -1,11 +1,11 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useCallback, useContext, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import navContext from '../../context/navContext';
 
 import LeftBar from '../../components/LeftBar';
 
-import { Container, DashboardExtract, MainTable } from './styles';
+import { Container, DashboardExtract, MainTable, Buttons } from './styles';
 
 const Extract: React.FC = () => {
   const history = useHistory();
@@ -23,11 +23,35 @@ const Extract: React.FC = () => {
     }
   }, [extract, setExtract, history]);
 
+  const handleIncome = useCallback(async () => {
+    console.log('todo');
+  }, []);
+
+  const handleOutcome = useCallback(() => {
+    console.log('todo');
+  }, []);
+
+  const handleTotal = useCallback(() => {
+    console.log('todo');
+  }, []);
+
   return (
     <Container>
       <LeftBar />
       <DashboardExtract>
         <h1>EXTRATO DETALHADO DA CONTA</h1>
+
+        <Buttons>
+          <button type="button" onClick={handleIncome}>
+            Receitas
+          </button>
+          <button type="button" onClick={handleOutcome}>
+            Despesas
+          </button>
+          <button type="button" onClick={handleTotal}>
+            Todas as transações
+          </button>
+        </Buttons>
 
         <MainTable>
           <table>

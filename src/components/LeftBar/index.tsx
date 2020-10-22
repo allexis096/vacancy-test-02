@@ -23,37 +23,37 @@ const LeftBar: React.FC = () => {
 
   const {
     home,
-    balance,
+    card,
     extract,
     setHome,
-    setBalance,
+    setCard,
     setExtract,
     balanceTotal,
   } = useContext(navContext);
 
   const handleHome = useCallback(() => {
-    setBalance(false);
+    setCard(false);
     setExtract(false);
     setHome(true);
 
     history.push('/dashboard');
-  }, [history, setHome, setBalance, setExtract]);
+  }, [history, setHome, setCard, setExtract]);
 
-  const handleBalance = useCallback(() => {
+  const handleCard = useCallback(() => {
     setExtract(false);
     setHome(false);
-    setBalance(true);
+    setCard(true);
 
-    history.push('/balance');
-  }, [history, setHome, setBalance, setExtract]);
+    history.push('/card');
+  }, [history, setHome, setCard, setExtract]);
 
   const handleExtract = useCallback(() => {
-    setBalance(false);
+    setCard(false);
     setHome(false);
     setExtract(true);
 
     history.push('/extract');
-  }, [history, setHome, setBalance, setExtract]);
+  }, [history, setHome, setCard, setExtract]);
 
   return (
     <NavContainer>
@@ -83,7 +83,7 @@ const LeftBar: React.FC = () => {
           <span>Início</span>
         </NavAction>
 
-        <NavAction onClick={handleBalance} balance={balance}>
+        <NavAction onClick={handleCard} card={card}>
           <BiMoney color="#999e9b" size={24} />
           <span>Saldo</span>
         </NavAction>
