@@ -19,7 +19,7 @@ interface NavContextProps {
   setBalance: Dispatch<SetStateAction<boolean>>;
   setExtract: Dispatch<SetStateAction<boolean>>;
   setTransactions: Dispatch<SetStateAction<ResponseTransactions[]>>;
-  setBalanceTotal: Dispatch<SetStateAction<any>>;
+  setBalanceTotal: Dispatch<SetStateAction<number | undefined>>;
 }
 
 interface ResponseTransactions {
@@ -47,7 +47,7 @@ export const NavContextProvider: React.FC = ({ children }) => {
   const [balanceTotal, setBalanceTotal] = useState<number | undefined>();
 
   useEffect(() => {
-    async function loadTransactions(): Promise<void> {
+    (async function loadTransactions(): Promise<void> {
       const responseTransactions = await apiTransactions.get('/transacoes');
 
       const companiesSplited = responseTransactions.data.reduce(
@@ -97,9 +97,7 @@ export const NavContextProvider: React.FC = ({ children }) => {
 
       setBalanceTotal(total);
       setTransactions(companiesFormatted);
-    }
-
-    loadTransactions();
+    })();
   }, []);
 
   return (
