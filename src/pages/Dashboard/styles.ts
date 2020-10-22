@@ -24,7 +24,7 @@ export const Company = styled.main`
   padding: 20px;
   margin-left: 20px;
   line-height: 40px;
-  width: 360px;
+  width: 315px;
 
   border: 1px solid #fff;
   border-radius: 5px;
