@@ -5,9 +5,9 @@ import navContext from '../../context/navContext';
 
 import LeftBar from '../../components/LeftBar';
 
-import { Container, DashboardBalance } from './styles';
+import { Container, DashboardCard } from './styles';
 
-const Balance: React.FC = () => {
+const Card: React.FC = () => {
   const [company] = useState(() => {
     const companyName = localStorage.getItem('@Contasimples:company');
 
@@ -20,29 +20,27 @@ const Balance: React.FC = () => {
 
   const history = useHistory();
 
-  const { balance, setBalance } = useContext(navContext);
+  const { card, setCard } = useContext(navContext);
 
   useEffect(() => {
-    setBalance(true);
-    history.push('/balance');
+    setCard(true);
+    history.push('/card');
 
     const companyName = localStorage.getItem('@Contasimples:company');
 
     if (!companyName) {
       history.push('/');
     }
-  }, [balance, setBalance, history]);
+  }, [card, setCard, history]);
 
   return (
     <Container>
       <LeftBar />
-      <DashboardBalance>
-        <h1>{company}, este é o seu saldo:</h1>
-
-        <span>R$10.500,00</span>
-      </DashboardBalance>
+      <DashboardCard>
+        <h1>TO-DO</h1>
+      </DashboardCard>
     </Container>
   );
 };
 
-export default Balance;
+export default Card;

@@ -6,7 +6,7 @@ export const Container = styled.div`
   height: 100vh;
 `;
 
-export const DashboardBalance = styled.section`
+export const DashboardCard = styled.section`
   color: #fff;
   font-weight: 700;
 
