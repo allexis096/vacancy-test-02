@@ -1,6 +1,6 @@
 import React, { useCallback, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-import { MdHome, MdNotifications, MdVisibility } from 'react-icons/md';
+import { MdHome, MdNotifications, MdRefresh } from 'react-icons/md';
 import { BiMoney } from 'react-icons/bi';
 import { RiNewspaperLine } from 'react-icons/ri';
 
@@ -68,7 +68,12 @@ const LeftBar: React.FC = () => {
             <p>Saldo da conta</p>
             <strong>{formatValue(Number(balanceTotal))}</strong>
           </div>
-          <MdVisibility color="#999e9b" size={24} />
+          <MdRefresh
+            color="#999e9b"
+            size={24}
+            // eslint-disable-next-line no-restricted-globals
+            onClick={() => location.reload()}
+          />
         </HeaderBalance>
       </Header>
 
